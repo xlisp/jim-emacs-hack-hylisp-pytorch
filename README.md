@@ -1,4 +1,20 @@
+
 # jim-emacs-hack-hylisp-torch 损而损至于列表->知识生长树=>最后组合打出去
+
+- [jim-emacs-hack-hylisp-torch 损而损至于列表->知识生长树=>最后组合打出去](#jim-emacs-hack-hylisp-torch-%E6%8D%9F%E8%80%8C%E6%8D%9F%E8%87%B3%E4%BA%8E%E5%88%97%E8%A1%A8-%E7%9F%A5%E8%AF%86%E7%94%9F%E9%95%BF%E6%A0%91%E6%9C%80%E5%90%8E%E7%BB%84%E5%90%88%E6%89%93%E5%87%BA%E5%8E%BB)
+    - [Hylisp function programming list](#hylisp-function-programming-list)
+        - [import](#import)
+        - [步步为营保存层,层和模型嫁接迁移](#%E6%AD%A5%E6%AD%A5%E4%B8%BA%E8%90%A5%E4%BF%9D%E5%AD%98%E5%B1%82%E5%B1%82%E5%92%8C%E6%A8%A1%E5%9E%8B%E5%AB%81%E6%8E%A5%E8%BF%81%E7%A7%BB)
+        - [pad_sequence & pack_padded_sequence](#pad_sequence--pack_padded_sequence)
+        - [cat](#cat)
+        - [zeros](#zeros)
+        - [Embedding](#embedding)
+        - [LSTM](#lstm)
+        - [view](#view)
+        - [contiguous](#contiguous)
+        - [transpose](#transpose)
+        - [get_word_vector](#get_word_vector)
+
 
 ### Hylisp function programming list
 
