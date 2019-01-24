@@ -1,5 +1,5 @@
 
-# jim-emacs-hack-hylisp-torch 损而损至于列表->知识生长树=>最后组合打出去
+# jim-emacs-hack-hylisp-pytorch 损而损至于列表->知识生长树=>最后组合打出去
 
 - [jim-emacs-hack-hylisp-torch 损而损至于列表->知识生长树=>最后组合打出去](#jim-emacs-hack-hylisp-torch-%E6%8D%9F%E8%80%8C%E6%8D%9F%E8%87%B3%E4%BA%8E%E5%88%97%E8%A1%A8-%E7%9F%A5%E8%AF%86%E7%94%9F%E9%95%BF%E6%A0%91%E6%9C%80%E5%90%8E%E7%BB%84%E5%90%88%E6%89%93%E5%87%BA%E5%8E%BB)
     - [Hylisp function programming list](#hylisp-function-programming-list)
