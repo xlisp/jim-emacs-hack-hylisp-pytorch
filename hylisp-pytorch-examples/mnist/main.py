@@ -20,6 +20,7 @@ def train(args, model, device, train_loader, optimizer, epoch):
         #embed()
         loss.backward() # 反向传播更新梯度,对数据求导(得矩阵特征->函数特征(最小值和极值等): 矩阵就是映射)
         ### 猫的图片+猴子的梯度合成图片 欺骗DL分类出图片是猴子: 梯度分类的游戏！
+        ##### 正传是求积求和=>积分(eval出结果,打出去), 反传是求导=>微分(求变化率,趋势)->预测之用
         optimizer.step() # 步长
         if batch_idx % args.log_interval == 0:
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
