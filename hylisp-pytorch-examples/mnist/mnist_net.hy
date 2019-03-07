@@ -18,7 +18,7 @@
   (defn forward [self x] ;; 每批数据x
     (-> x
         (self.conv1) ;; (-> x 卷积 激活 最大池化)
-        (F.relu)
+        (F.relu) ;; F.relu激活函数: 重新"分类摆好"要训练的参数
         ((fn [x]
            (F.max_pool2d x 2 2))) ;; 2 * 2的窗口大小
         (self.conv2)
@@ -26,11 +26,10 @@
         ((fn [x]
            (F.max_pool2d x 2 2)))
         ((fn [x]
-           (x.view -1 (* 4 4 50))))
-        (self.fc1)
+           (x.view -1 (* 4 4 50)))) ;; 样本的数量 ? (* 4 4 50); -1:第一位确定了,其他跟着确定
+        (self.fc1) ;; Dense
         (F.relu)
-        (self.fc2)
+        (self.fc2) ;; Dense
         ((fn [x]
            (F.log_softmax x :dim 1)))))
   )
-
