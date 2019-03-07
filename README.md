@@ -108,4 +108,5 @@
     params = [{'params' : md.parameters()} for md in model.modules()
               if md in [model.conv1, model.conv2, model.mp, model.fc]]
     optimizer = optim.SGD(params, lr=args.lr, momentum=args.momentum) # 优化的算法,params是所有层的参数
+    # optim.SGD随机梯度下降可只调整某一层的参数
 ```

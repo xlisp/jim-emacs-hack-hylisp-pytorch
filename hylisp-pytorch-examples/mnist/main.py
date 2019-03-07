@@ -11,15 +11,16 @@ import hy
 from mnist_net import Net
 
 def train(args, model, device, train_loader, optimizer, epoch):
-    model.train()
+    model.train() # 设置训练的状态
     for batch_idx, (data, target) in enumerate(train_loader):
-        data, target = data.to(device), target.to(device)
-        optimizer.zero_grad()
-        output = model(data)
-        loss = F.nll_loss(output, target)
+        data, target = data.to(device), target.to(device) # 数据和标签
+        optimizer.zero_grad() # 参数置为零,梯度置为零
+        output = model(data) # 灌入训练数据
+        loss = F.nll_loss(output, target) # A是SGD优化算法, B是目标函数loss
         #embed()
-        loss.backward()
-        optimizer.step()
+        loss.backward() # 反向传播更新梯度,对数据求导(得矩阵特征->函数特征(最小值和极值等): 矩阵就是映射)
+        ### 猫的图片+猴子的梯度合成图片 欺骗DL分类出图片是猴子: 梯度分类的游戏！
+        optimizer.step() # 步长
         if batch_idx % args.log_interval == 0:
             print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                 epoch, batch_idx * len(data), len(train_loader.dataset),
@@ -93,7 +94,9 @@ def main():
     params = [{'params' : md.parameters()} for md in model.modules()
               if md in [model.conv1, model.conv2, model.mp, model.fc]]
     optimizer = optim.SGD(params, lr=args.lr, momentum=args.momentum) # 优化的算法,params是所有层的参数
-
+    # optim.SGD随机梯度下降可只调整某一层的参数
+    ##### 1. 正向传播eval(执行代码导入特征数据流或者铺数据产生的引力皮床"数据正常流下")
+    ##### 2. 反向传播apply(小球顺着引力皮床而快速下降),更加数据特征更新数据管道
     for epoch in range(1, args.epochs + 1):
         train(args, model, device, train_loader, optimizer, epoch)
         test(args, model, device, test_loader)
