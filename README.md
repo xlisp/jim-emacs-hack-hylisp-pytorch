@@ -101,3 +101,11 @@
 (.get_word_vector char_embedder "我")
 
 ```
+#### SGD
+
+```python
+    # 等同于model.parameters(): 单层抽出使用,白盒化和层嫁接思想
+    params = [{'params' : md.parameters()} for md in model.modules()
+              if md in [model.conv1, model.conv2, model.mp, model.fc]]
+    optimizer = optim.SGD(params, lr=args.lr, momentum=args.momentum) # 优化的算法,params是所有层的参数
+```
